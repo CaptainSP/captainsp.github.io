@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CaptainSP</title>
+</head>
+<link rel="stylesheet" type="text/css" href="../../ass/bs/css/bootstrap.min.css"> 
+<script type="text/javascript">
+	var $colors = [
+	"#05386B",
+	"#5CDB95",
+	"#D6CE15",
+	"#1A1A1D",
+	];
+	function Margin(margin) {
+		return ((document.documentElement.clientHeight*margin)/100)-document.querySelector('.navbar').clientHeight+'px';
+	}
+  $colorw = "style=\"color: #EDF5E1;\"";
+</script>
+<style type="text/css">
+.output {
+  width: 100%;
+  background-color: #EDF5E1;;
+}
+
+p {
+  display: inline-block;
+}
+.nhrf:focus , .nhrf:active , .nhrf:hover , .nhrf {
+	color: white;
+	text-decoration: none;
+}
+{
+</style>
+<body style="margin: 0;padding: 0; background-color: {-$colors[2]-};">
+	<nav class="navbar navbar-expand-lg navbar-dark" style="color: white; background-color: {-$colors[2]-};">
+    <a class="navbar-brand" href="../">ElementJS</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarColor03">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="../">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../getting-started">Get Started</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="../docs">Docs</a>
+        </li>
+      </ul>
+      <span class="navbar-text">
+       <a class="nav-link" href="../donate">Donate</a>
+     </span>
+   </div>
+ </nav>
+ <div id="mar" style="text-align: center; margin-top: {- Margin(40); -};"><h4 {-$colorw-} >Use Javascript In Everywhere</h4>
+  <br>
+  <br>
+  <br>
+  <h4 {-$colorw-}><a href="#docs" class="nhrf">Docs &darr;</a></h4>
+  <div align="left" style="position: absolute; top: 100%; background-color: white; width: 100%; height: 100%;">
+    <div style="display: inline-block; background-color: white; width: 100%; padding: 2%;">
+      <a name="docs"></a>
+      <br>
+      <h2>Docs</h2>
+      <br>
+      <div class="row">
+        <div class="col-3">
+          <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+            <a id="notes" class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="notes" aria-selected="true">Notes</a>
+            <a id="tags" class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="tags" aria-selected="false">Tags</a>
+            <a id="echo" class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="echo" aria-selected="false">Echo</a>
+            <a id="fake-tag" class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="fake-tag" aria-selected="false">Fake Tag</a>
+          </div>
+        </div>
+        <div class="col-9">
+          <div class="tab-content " id="v-pills-tabContent">
+            <div class="tab-pane fade show active text-dark" id="v-pills-home" role="tabpanel" aria-labelledby="notes">
+              <center><h5>Notes</h5></center>
+              <br>
+              <div class="alert alert-warning">
+                <h4 class="alert-heading">Note 1</h4>
+                <p class="mb-0">
+                  ElementJS works like php so you can't print anythink in timeout functions.
+                  <br>
+                  <br>
+                  <code>(fake-tag-s)setInterval(function() {return "Hello!;"}, 2000);(fake-tag-e)</code> gives <code>undefined</code>.Not "Hello!".
+                </p>
+              </div>
+              <br>
+              <div class="alert alert-dismissible alert-info">
+                <h4 class="alert-heading">Note 2</h4>
+                <p class="mb-0">
+                  You can't use <code>return</code> in loops.If you want to print anything in loops look <a href="#docs" onclick="GoTab('echo');">echo</a> command.
+                </p>
+              </div>
+              <br>
+              <div class="alert alert-dismissible alert-success">
+                <h4 class="alert-heading">Changing "undefined" text</h4>
+                <p class="mb-0">
+                 You can put "||" symbols after your function.
+                 <br>
+                 <br>
+                 <code>(fake-tag-s)alert("Hello!");(fake-tag-e)</code> gives <code>undefined</code>.
+                 <br>
+                 <br>
+                 <code>(fake-tag-s)alert("Hello!") || "Hello!";(fake-tag-e)</code> gives <code>Hello!</code>.
+               </p>
+             </div>
+             <br>
+             <div class="alert alert-dismissible alert-success">
+              <h4 class="alert-heading">Using in Dynamic Websites</h4>
+              <p class="mb-0">
+               If you change anythink after load  you can use <code>ElementJS.Load();</code> function.
+             </p>
+           </div>
+           <br>
+           <center><h5><a href="#docs" onclick="GoTab('tags');">Tags &darr;</a></h5></center>
+         </div>
+         <div class="tab-pane fade text-dark" id="v-pills-profile" role="tabpanel" aria-labelledby="tags">
+           <center><h5>Tags</h5></center>
+           <br>
+           <div class="alert alert-dismissible alert-info">
+            <h4 class="alert-heading">(fake-tag-s) (fake-tag-e)</h4>
+            <p class="mb-0">
+             You must put your javascript codes between <code>(fake-tag-s)</code> and <code>(fake-tag-e)</code> tags.
+           </p>
+         </div>
+         <br>
+         <div class="alert alert-dismissible alert-secondary">
+          <h4 class="alert-heading">Example</h4>
+          <p class="mb-0">
+           (fake-tag-s) 3+3 (fake-tag-e)
+         </p>
+       </div>
+       <div class="alert alert-dismissible alert-secondary">
+        <h4 class="alert-heading">Output</h4>
+        <p class="mb-0">
+          {- 3+3 -}
+        </p>
+      </div>
+      <br>
+      <center><h5><a href="#docs" onclick="GoTab('echo');">Echo &darr;</a></h5></center>
+    </div>
+    <div class="tab-pane fade text-dark" id="v-pills-messages" role="tabpanel" aria-labelledby="echo">
+      <center><h5>Echo</h5></center>
+      <br>
+      <div class="alert alert-dismissible alert-info">
+        <h4 class="alert-heading">(fake-tag-s) ?<span style="display: none;"></span>{ (Echo ID) "String" }<span style="display: none;"></span>? (fake-tag-e)</h4>
+        <p class="mb-0">
+         You can use <code>echo</code> command in loops.
+       </p>
+     </div>
+     <br>
+     <div class="alert alert-dismissible alert-secondary">
+      <h4 class="alert-heading">Example</h4>
+      <p class="mb-0">
+       (fake-tag-s)
+       <br> for (var i = 0; i < 8; i++) {<br>
+       <code> ?<span style="display: none;"></span>{(58) i}<span style="display: none;"></span>?</code><br>
+     }
+     <br> (fake-tag-e)
+     <br>
+     &lt;p&gt;<code>?<span style="display: none;"></span>(58)<span style="display: none;"></span>?</code>&lt;/p&gt;
+   </p>
+ </div>
+ <div class="alert alert-dismissible alert-secondary">
+  <h4 class="alert-heading">Output</h4>
+  <p class="mb-0">
+   {-
+    for (var i = 0; i (lt) 8; i++) {
+    ?{(58) i}?
+  }
+  -}
+  <br>
+  <p><code>?(58)?</code></p>
+</p>
+<br>
+<br>
+<h5>Descriptions</h5>
+<br>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Colored Text</th>
+      <th scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code> ?<span style="display: none;"></span>{</code>(58) i<code>}<span style="display: none;"></span>?</code></td>
+      <td>Echo command start and end tag.</td>
+    </tr>
+    <tr>
+      <td>?<span style="display: none;"></span>{<code>(</code>58<code>)</code> i}<span style="display: none;"></span>?</td>
+      <td>Echo id parentheses.Please put space after parentheses.</td>
+    </tr>
+    <tr>
+      <td>?<span style="display: none;"></span>{(<code>58</code>) i}<span style="display: none;"></span>?</td>
+      <td>Echo ID.You can give any number.</td>
+    </tr>
+    <tr>
+      <td>?<span style="display: none;"></span>{(58) <code>i</code>}<span style="display: none;"></span>?</td>
+      <td>Prinnt text.Any.</td>
+    </tr>
+    <tr>
+      <td><code>?<span style="display: none;"></span>(</code>58<code>)<span style="display: none;"></span>?</code></td>
+      <td>Prinnt area tags.Do not put in <code>{<span></span>- -<span>}</span></code> tags.</td>
+    </tr>
+    <tr>
+      <td>?<span style="display: none;"></span>(<code>58</code>)<span style="display: none;"></span>?</td>
+      <td>Echo ID for print.</td>
+    </tr>
+  </tbody>
+</table>
+<br>
+<center><h5><a href="#docs" onclick="GoTab('fake-tag');">Fake Tag &darr;</a></h5></center>
+</div>
+<br>
+</div>
+<div class="tab-pane fade text-dark" id="v-pills-settings" role="tabpanel" aria-labelledby="fake-tag">
+  <center><h5>Fake Tag</h5></center>
+  <br>
+  <div class="alert alert-dismissible alert-warning">
+    <h4 class="alert-heading">Note</h4>
+    <p class="mb-0">
+     Working only in <code>html</code> codes.
+   </p>
+ </div>
+ <br>
+ <div class="alert alert-dismissible alert-success">
+  <h4 class="alert-heading">(<span>fake-tag-s</span>) (<span>fake-tag-e</span>)</h4>
+  <p class="mb-0">
+    Output: <code>(fake-tag-s) (fake-tag-e)</code>
+  </p>
+</div>
+<br>
+<div class="alert alert-dismissible alert-info">
+  <h4 class="alert-heading">(<span>lt</span>) and (<span>gt</span>)</h4>
+  <p class="mb-0">
+   Sometimes the < or > symbols do not work correctly. Instead, use the symbol (<span>lt</span>) or (<span>gt</span>) in the code.
+   <br>
+   <br>
+   Example : (fake-tag-s)
+   for (var i = 0; i <code><</code> 8; i++) {
+   console.log(i);
+ }
+ (fake-tag-e) code maybe can gives error. <br><br>
+
+ But : (fake-tag-s)
+ for (var i = 0; i <code>(<span></span>lt<span></span>)</code> 8; i++) {
+ console.log(i);
+}
+(fake-tag-e) code working correctly.
+
+
+</p>
+</div>
+<br>
+<div class="alert alert-dismissible alert-secondary">
+  <h4 class="alert-heading">Other tags</h4>
+  <p class="mb-0">
+   For other tags you can put <code>&lt;span&gt;&lt;/span&gt;</code> between tag;
+   <br>
+   <br>
+   Example : ?&lt;span&gt;(id)&lt;/span&gt;? .
+
+ </p>
+</div>
+<br>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row" style="position: absolute; top: {- document.documentElement.scrollHeight+document.querySelector('#mar').scrollHeight+'px'; -}; width: 100%; padding-bottom: 5%; padding-left:5%; padding-right: 5%;">
+  <div style="display: inline-block; color: white;" class="col-sm">
+    CaptainSP
+  </div>
+  <div style="display: inline-block; color: white;" class="col-sm">
+   &copy;2018 All Rights Reserved
+ </div>
+ <div style="display: inline-block; color: white;" class="col-sm">
+  ElementJS
+</div>
+</div>
+</div> 
+<script type="text/javascript"></script>
+<script type="text/javascript">
+
+  function GoTab(tab) {
+   document.getElementById(tab).click();
+ }
+ var i = -1;setInterval(function() {if (i==3) {i=-1;}i++;document.body.style.backgroundColor = $colors[i];document.querySelector(".navbar").style.backgroundColor = $colors[i];}, 1500);
+</script>
+<script type="text/javascript" src="../../ass/js/jquery.js"></script>
+<script type="text/javascript" src="../../ass/js/popper.min.js"></script>
+<script type="text/javascript" src="../../ass/bs/js/bootstrap.js"></script>
+<script type="text/javascript" src="../../ass/js/elementjs.js"></script>
+</body>
+</html>
