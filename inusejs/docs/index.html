@@ -182,11 +182,27 @@ p {
   <p class="mb-0">
    {-
     for (var i = 0; i (lt) 8; i++) {
-    ?{(58) i}?
+    ?{(58) i ?inTimeout:false}?
   }
   -}
   <br>
   <p><code>?(58)?</code></p>
+</p>
+<br>
+<br>
+<h4 class="alert-heading">Example</h4>
+<p class="mb-0">
+ (fake-tag-s) (function() {var i = 0; setInterval(function() { i++; var text = "Hello "+i; ?{(59) text <code>?inTimeout:true</code>}? }, 1000);}() || "") (fake-tag-e) ?
+ <br>
+ <p><span></span>(59)<span></span>?</p>
+</p>
+<br>
+<br>
+<h4 class="alert-heading">Output</h4>
+  <p class="mb-0">
+   {- (function() {var i = 0; setInterval(function() { i++; var text = "Hello "+i; ?{(59) text ?inTimeout:true}? }, 1000);}() || "") -}
+  <br>
+  <p><code>?(59)?</code></p>
 </p>
 <br>
 <br>
@@ -201,20 +217,24 @@ p {
   </thead>
   <tbody>
     <tr>
-      <td><code> ?<span style="display: none;"></span>{</code>(58) i<code>}<span style="display: none;"></span>?</code></td>
+      <td><code> ?<span style="display: none;"></span>{</code>(58) i<code> ?inTimeout:false}<span style="display: none;"></span>?</code></td>
       <td>Echo command start and end tag.</td>
     </tr>
     <tr>
-      <td>?<span style="display: none;"></span>{<code>(</code>58<code>)</code> i}<span style="display: none;"></span>?</td>
+      <td>?<span style="display: none;"></span>{<code>(</code>58<code>)</code> i ?inTimeout:false}<span style="display: none;"></span>?</td>
       <td>Echo id parentheses.Please put space after parentheses.</td>
     </tr>
     <tr>
-      <td>?<span style="display: none;"></span>{(<code>58</code>) i}<span style="display: none;"></span>?</td>
+      <td>?<span style="display: none;"></span>{(<code>58</code>) i ?inTimeout:false}<span style="display: none;"></span>?</td>
       <td>Echo ID.You can give any number.</td>
     </tr>
     <tr>
-      <td>?<span style="display: none;"></span>{(58) <code>i</code>}<span style="display: none;"></span>?</td>
+      <td>?<span style="display: none;"></span>{(58) <code>i</code> ?inTimeout:false}<span style="display: none;"></span>?</td>
       <td>Prinnt text.Any.</td>
+    </tr>
+    <tr>
+      <td>?<span style="display: none;"></span>{(58) i <code>?inTimeout:false</code>}<span style="display: none;"></span>?</td>
+      <td>Use it for timeout functions.Set true/false or leave it empty.Default value is false.</td>
     </tr>
     <tr>
       <td><code>?<span style="display: none;"></span>(</code>58<code>)<span style="display: none;"></span>?</code></td>
