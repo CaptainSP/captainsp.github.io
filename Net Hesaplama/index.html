@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<!-- Required meta tags -->
+	<meta name="robots" content="noindex" />
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://bootswatch.com/4/lux/bootstrap.min.css">
+
+	<title>Net Hesaplayıcı</title>
+</head>
+<body class="container"><br>
+	<center><h2>Net Hesaplayıcı</h2></center><br>
+
+	<center><h5>Lütfen Doğru Sayınızı Aşağıdaki Kutucuklara Girin</h5></center> <br>
+
+	<center>
+		<label for="matematik" class="lead">Matematik</label>
+		<div class="row">
+			<div class="col-sm-8">
+				<input type="number" id="matematik" class="form-control" placeholder="Matematik">
+			</div>
+			<div class="col-sm-4"><input type="number" id="matematikbos" class="form-control" placeholder="Boş"></div>
+		</div>
+		<br>
+		<label for="turkce" class="lead">Türkçe</label>
+		<div class="row">
+			<div class="col-sm-8">
+				<input type="number" id="turkce" class="form-control" placeholder="Türkçe">
+			</div>
+			<div class="col-sm-4"><input type="number" id="turkcebos" class="form-control" placeholder="Boş"></div>
+		</div>
+		<br>
+		<label for="sozel" class="lead">Sözel</label>
+		<div class="row">
+			<div class="col-sm-8">
+				<input type="number" id="sozel" class="form-control" placeholder="Sözel">
+			</div>
+			<div class="col-sm-4"><input type="number" id="sozelbos" class="form-control" placeholder="Boş"></div>
+		</div>
+		<br>
+		<label for="sayisal" class="lead">Sayısal</label>
+		<div class="row">
+			<div class="col-sm-8">
+				<input type="number" id="sayisal" class="form-control" placeholder="Sayısal">
+			</div>
+			<div class="col-sm-4"><input type="number" id="sayisalbos" class="form-control" placeholder="Boş"></div>
+		</div>
+		<br>
+
+		<br>
+		<button class="btn btn-success" onclick="NetHeapla();">Hesapla</button>
+	</center>
+
+	<script type="text/javascript">
+		var matematik, turkce, sozel, sayisal , matematiknet , turkcenet , sozelnet , sayisalnet , tam , toplam,sonuc , matematikbos , turkcebos , sozelbos , sayisalbos , metin;
+
+
+		function NetHeapla() {
+			matematik = parseInt(document.getElementById('matematik').value) || 0;
+			turkce = parseInt(document.getElementById('turkce').value) || 0;
+			sozel = parseInt(document.getElementById('sozel').value) || 0;
+			sayisal = parseInt(document.getElementById('sayisal').value) || 0;
+			matematikbos = parseInt(document.getElementById('matematikbos').value) || 0;
+			turkcebos = parseInt(document.getElementById('turkcebos').value) || 0;
+			sozelbos = parseInt(document.getElementById('sozelbos').value) || 0;
+			sayisalbos = parseInt(document.getElementById('sayisalbos').value) || 0;
+
+			matematiknet = matematik-(((30-matematik-matematikbos)-((30-matematik-matematikbos)%4))/4)+0;
+			turkcenet = turkce-(((30-turkce-turkcebos)-((30-turkce-turkcebos)%4))/4);
+			sozelnet = sozel-(((30-sozel-sozelbos)-((30-sozel-sozelbos)%4))/4);
+			sayisalnet = sayisal-(((30-sayisal-sayisalbos)-((30-sayisal-sayisalbos)%4))/4);
+
+			tam = 30*20+30*5+30*2+30*3;
+
+			toplam = matematiknet*20+turkcenet*5+sozelnet*2+sayisalnet*3;
+
+			sonuc = (toplam/tam)*500;
+
+			metin = "Tahmini puanın: <span class='text-success'>"+sonuc+"</span><br>"+
+			"Matematik netin: <span class='text-success'>"+matematiknet+"</span><br>"+
+			"Türkçe netin: <span class='text-success'>"+turkcenet+"</span><br>"+
+			"Sözel netin: <span class='text-success'>"+sozelnet+"</span><br>"+
+			"Sayısal netin: <span class='text-success'>"+sayisalnet+"</span><br>";
+
+			document.getElementById('sonuclar').innerHTML = metin;
+
+			document.getElementById('sonucac').click();
+		}
+	</script>
+</center>
+
+<button type="button" class="btn btn-primary" id="sonucac" data-toggle="modal" data-target="#exampleModal" style="display: none;"></button>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="exampleModalLabel">Sonuçların</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body" align="center">
+				<p class="lead" id="sonuclar"></p>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
+</body>
+</html>
