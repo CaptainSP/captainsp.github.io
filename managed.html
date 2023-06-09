@@ -225,7 +225,7 @@
         height: 100vh;
         overflow: hidden;
         background-color: rgba(29, 29, 29, 1);
-        color: #fff;
+        color: rgba(29, 29, 29, 1);
       }
 
       .loading {
@@ -233,6 +233,15 @@
         display: flex;
         justify-content: center;
         align-items: center;
+      }
+
+      .captcha {
+        /* bottom*/
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 100px;
+        background-color: rgba(29, 29, 29, 1);
       }
     </style>
   </head>
@@ -249,9 +258,8 @@
           <div></div>
           <div></div>
         </div>
-        <br />
-        <div>::CAPTCHA_BOX::</div>
       </div>
     </div>
+    <div class="captcha">::CAPTCHA_BOX::</div>
   </body>
 </html>
