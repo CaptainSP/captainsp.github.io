@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Collect Coins Game</title>
+<style>
+    body, html {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        touch-action: none; /* Prevents default touch interactions */
+    }
+    canvas {
+        display: block;
+    }
+</style>
+</head>
+<body>
+<canvas id="gameCanvas"></canvas>
+<script>
+const canvas = document.getElementById('gameCanvas');
+const ctx = canvas.getContext('2d');
+
+const coinImgSrc = 'https://cdn-icons-png.flaticon.com/512/61/61935.png';
+const coinImg = new Image();
+const coins = [];
+const coinCount = 20; // Number of coins to spawn
+let collectedCoins = 0;
+let coinSize; // Size of the coins, will be dynamically set
+
+// Load the coin image
+coinImg.src = coinImgSrc;
+
+coinImg.onload = function() {
+    updateCanvasSize();
+    window.addEventListener('resize', updateCanvasSize);
+    spawnCoins(coinCount);
+    drawCoins();
+};
+
+function updateCanvasSize() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    coinSize = Math.min(canvas.width, canvas.height) / 15; // Adjustable coin size based on viewport size
+    drawCoins();
+}
+
+function spawnCoins(count) {
+    for (let i = 0; i < count; i++) {
+        const x = Math.random() * (canvas.width - coinSize);
+        const y = Math.random() * (canvas.height - coinSize);
+        coins.push({ x, y });
+    }
+}
+
+function drawCoins() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    coins.forEach(coin => {
+        ctx.drawImage(coinImg, coin.x, coin.y, coinSize, coinSize);
+    });
+    ctx.font = '20px Arial';
+    ctx.fillText(`Collected: ${collectedCoins}`, 10, 30);
+}
+
+canvas.addEventListener('touchmove', handleTouchMove);
+
+function handleTouchMove(event) {
+    const touches = event.touches;
+    for (let i = 0; i < touches.length; i++) {
+        const touch = touches[i];
+        const touchX = touch.clientX - canvas.offsetLeft;
+        const touchY = touch.clientY - canvas.offsetTop;
+
+        detectCoinCollection(touchX, touchY);
+    }
+}
+
+function detectCoinCollection(x, y) {
+    for (let i = coins.length - 1; i >= 0; i--) {
+        const coin = coins[i];
+        if (x > coin.x && x < coin.x + coinSize && y > coin.y && y < coin.y + coinSize) {
+            coins.splice(i, 1);
+            collectedCoins++;
+            spawnCoins(1); // Spawn a new coin
+            drawCoins();
+        }
+    }
+}
+
+</script>
+</body>
+</html>
